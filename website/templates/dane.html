@@ -1,0 +1,45 @@
+{% extends "base.html" %} 
+{% block title %}ANALIZA{% endblock %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="static/styles2.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+    crossorigin="anonymous"></script>
+    <script>
+        console.log()
+        $(document).ready(function () {
+
+            $(".chart-link").click(function (e) {
+                e.preventDefault();
+
+                var chartId = $(this).data("chart-id");
+
+                // Wyślij zapytanie AJAX do serwera
+                $.ajax({
+                    url: "/chart",
+                    type: "POST",
+                    data: { chartId: chartId },
+                    success: function (response) {
+
+                        $("#chart-container").html(response);
+                    },
+
+                });
+            });
+        });
+    </script>
+
+
+
+    <h1>Poniżej znajdują się wykresy dotyczące rejestracji nowych pojazdów w zależności od rodzaju używanego paliwa:</h1>
+
+    <div class="form-row">
+        <span><button class="chart-link" data-chart-id="benzyna">Benzyna</button></span>
+        <span><button class="chart-link" data-chart-id="olej">Olej napędowy</button></span>
+        <span><button class="chart-link" data-chart-id="gaz">Gaz (LPG)</button></span>
+        <span><button class="chart-link" data-chart-id="pozostale">Pozostałe</button></span> 
+    </div>
+
+    <div id="chart-container">
+
+    </div>
+{% endblock %}

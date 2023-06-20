@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block title %}list{% endblock %} 
+{% block content %}
+    {% for item in values %}
+        {{ item.email }}
+    {% endfor %}
+{% endblock %}

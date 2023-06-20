@@ -1,0 +1,25 @@
+body {
+  background-image: url("tlo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+	text-align: center;
+	font-size: 24 px;
+	font-weight:bold;
+	color: black;
+	margin-top: 100px;
+}
+
+span {
+    display: block;
+    margin-top: 8px;
+}
+
+.form-row {
+           text-align: center;
+}
+.form-row label {
+                display: block;
+}
+

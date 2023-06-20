@@ -1,0 +1,23 @@
+body {
+  background-image: url("tlo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-row button {
+    padding: 10px 20px;
+    font-size:24px;
+    border-radius: 20px;
+}
+
+.form-row button:hover {
+    padding: 10px 20px;
+    font-size:24px;
+    border-radius: 20px;
+    color: red;
+}
+
+span {
+    display: block;
+    margin-top: 8px;
+}
